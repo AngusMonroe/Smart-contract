@@ -5,7 +5,7 @@ This project conclude two parts: **Word2vec** and **Web spider**.
 
 ### Directory Introduction
 - **paper** is the introduction of our project
-- **IMG_8403** is the framework of our project
+- **IMG_8441** is the framework of our project
 
 
 ### Project Functions
