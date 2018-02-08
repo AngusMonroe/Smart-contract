@@ -37,7 +37,7 @@ def Translate(path):
         print(New_dir)
     #创建一个文本存入所有的word文件名
     fileNameSet= os.path.abspath(os.path.join(New_dir, 'fileNames.txt'))
-    o=open(fileNameSet,"w") 
+    o = open(fileNameSet,"w")
     try:
         for filename in files:
             print(filename)
@@ -78,6 +78,14 @@ def Translate(path):
         #wordapp.Quit()
     except:
         print('error')
+
+    o.close()
+    o = open(fileNameSet, "r")
+    aimpath = o.readline()[:-1]
+    print('aim is: ' + aimpath)
+    o.close()
+
+    return aimpath
 
 if __name__ == '__main__':
     # print('''
