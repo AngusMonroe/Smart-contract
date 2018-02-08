@@ -12,7 +12,7 @@ import importlib
 
 def Extract(aimpath):
     in_text = aimpath
-    out_text = r"/Users/xujiaxing/Documents/GitHub/Smart-contract/data/keyword.txt"
+    out_text = r"../data/keyword.txt"
 
     f1 = open(in_text,'r',encoding='utf8')
     f2 = open(out_text,'a',encoding='utf8')

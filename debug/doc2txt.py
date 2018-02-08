@@ -64,7 +64,7 @@ def Translate(path):
             word_to_txt = os.path.join(os.path.join(path, 'newdir'),new_txt_name)
             print(word_to_txt)
             text = docx2txt.process(docpath)
-            new_file = open('/Users/xujiaxing/Documents/GitHub/Smart-contract/data/datadir/newdir/' + new_txt_name,'w')
+            new_file = open('../data/datadir/newdir/' + new_txt_name,'w')
             new_file.write(text)
             new_file.close()
             #wordapp = wc.Dispatch('Word.Application')
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     # print('Enter your Director\'s path:')
     # print("路径用\或\\表示均可")
     # mypath = input()
-    mypath = '/Users/xujiaxing/Documents/GitHub/Smart-contract/data/datadir'
+    mypath = '../data/datadir'
     print ('生成的文件有:')
     Translate(mypath)
     print('The Total Files Numbers = ', all_FileNum)
