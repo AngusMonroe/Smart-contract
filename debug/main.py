@@ -7,6 +7,6 @@ from regular_expression import *
 import logging
 
 if __name__=='__main__':
-    mypath = '../data/datadir'
+    mypath = r'../data/datadir'
     aimpath = Translate(mypath)
     Extract(aimpath)
