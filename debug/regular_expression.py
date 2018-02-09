@@ -24,7 +24,8 @@ def Extract(aimpath):
             if linkre:
                 print(linkre)
                 for keyword in linkre:
-                    f2.write(keyword+'\n')
+                    if keyword:
+                        f2.write(keyword+'\n')
         except Exception:
             print('error')
             #print(line)
