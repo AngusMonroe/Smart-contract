@@ -2,6 +2,11 @@
 __author__='XJX'
 __date__='2018.02.06'
 
+"""
+description:
+    添加自定义词典的词频（定义为50）和词性（定义为名词）
+"""
+
 import os
 import codecs
 import sys

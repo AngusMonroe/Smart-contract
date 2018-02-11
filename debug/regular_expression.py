@@ -2,6 +2,11 @@
 __author__='XJX'
 __date__='2018.02.07'
 
+"""
+description:
+    利用正则表达式提取关键词
+"""
+
 import os
 import re
 import codecs
@@ -27,13 +32,13 @@ def Extract(aimpath):
             for key in linkre1:
                 date = key[0] + '年' + key[1] + '月' + key[2] + '日'
                 #print(date)
-                date_tran = re.sub('_+(\S*)_+日', '__' + date + '__', line)
+                date_tran = re.sub('_+(\S*)_+日', '__' + date + '__', line)#将'_x_年_x_月_x_日'替换为'_x年x月x日_'格式
                 #print(date_tran)
                 #print(line)
                 line = line.replace(line, date_tran)
                 #print(line)
-            linkre2 = re.findall("_+([^_]*)_+",line)
 
+            linkre2 = re.findall("_+([^_]*)_+",line)
             if linkre2:
                 print(linkre2)
                 for keyword in linkre2:
@@ -41,16 +46,17 @@ def Extract(aimpath):
                     if keyword:
                         f2.write(keyword+'\n')
 
-                        flag = re.findall("_+([^_]*)_+",line)
+                        flag = re.findall("_+([^_]*)_+",line)#匹配'_x_'字段
                         while flag:
                             print(flag)
-                            keyword_tran = re.sub('_+([^_]*)_+', '##' + str(num) + '##\n', line, count=1)
+                            keyword_tran = re.sub('_+([^_]*)_+', '##' + str(num) + '##\n', line, count=1)#将匹配到的字段转化为'##num##'格式
                             f4.write('##' + str(num) + '## ' + flag[0] +'\n')
                             #print(keyword_tran)
                             #print(line)
                             num += 1
                             line = line.replace(line, keyword_tran)
                             flag = re.findall("_+([^_]*)_+", line)
+
             f3.write(line)
             #line = f1.readline()
         except Exception:
@@ -63,4 +69,3 @@ def Extract(aimpath):
     f2.close()
     f3.close()
     f4.close()
-

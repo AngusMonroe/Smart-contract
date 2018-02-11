@@ -2,6 +2,13 @@ __author__='XJX'
 __date__='2018.02.08'
 # -*- coding: utf-8 -*-
 
+"""
+description:
+    将一个目录下所有doc和docx文件转成txt
+    该目录下创建一个新目录newdir
+    新目录下fileNames.txt创建一个文本存入所有的word文件名
+    本版本具有一定的容错性，即允许对同一文件夹多次操作而不发生冲突
+"""
 
 import docx2txt
 import os
@@ -18,17 +25,11 @@ debug = 0
 
 
 def Translate(path):
-    '''
-    将一个目录下所有doc和docx文件转成txt
-    该目录下创建一个新目录newdir
-    新目录下fileNames.txt创建一个文本存入所有的word文件名
-    本版本具有一定的容错性，即允许对同一文件夹多次操作而不发生冲突
-    '''
     global debug, all_FileNum
     if debug:
         print(path)
     #该目录下所有文件的名字
-    files = os.listdir(path) 
+    files = os.listdir(path)
     #该目下创建一个新目录newdir，用来放转化后的txt文本
     New_dir = os.path.abspath(os.path.join(path, 'newdir'))
     if not os.path.exists(New_dir):
@@ -52,10 +53,10 @@ def Translate(path):
             if debug:
                 print(filename)
             docpath = os.path.abspath(os.path.join(path,filename))
-            
+
             #得到一个新的文件名,把原文件名的后缀改成txt
             new_txt_name = ''
-            if fnmatch.fnmatch(filename, '*.doc'):    
+            if fnmatch.fnmatch(filename, '*.doc'):
                 new_txt_name = filename[:-4]+'.txt'
             else:
                 new_txt_name = filename[:-5]+'.txt'
@@ -67,11 +68,6 @@ def Translate(path):
             new_file = open('../data/datadir/newdir/' + new_txt_name,'w')
             new_file.write(text)
             new_file.close()
-            #wordapp = wc.Dispatch('Word.Application')
-            #doc = wordapp.Documents.Open(docpath)
-            #为了让python可以在后续操作中r方式读取txt和不产生乱码，参数为4
-            #doc.SaveAs(word_to_txt,4)
-            #doc.Close()
             o.write(word_to_txt+'\n')
             all_FileNum += 1
     #finally:
@@ -101,8 +97,3 @@ if __name__ == '__main__':
     print ('生成的文件有:')
     Translate(mypath)
     print('The Total Files Numbers = ', all_FileNum)
-
-    
-
-
-
