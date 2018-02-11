@@ -4,9 +4,11 @@ __date__='2018.02.08'
 
 from doc2txt import *
 from regular_expression import *
+from keywords import *
 import logging
 
 if __name__=='__main__':
     mypath = r'../data/datadir'
     aimpath = Translate(mypath)
     Extract(aimpath)
+    Keywords()

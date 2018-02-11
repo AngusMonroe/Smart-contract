@@ -2,8 +2,6 @@
 __author__='XJX'
 __date__='2018.02.07'
 
-import jieba
-import jieba.analyse
 import os
 import re
 import codecs
@@ -35,6 +33,7 @@ def Extract(aimpath):
                 line = line.replace(line, date_tran)
                 #print(line)
             linkre2 = re.findall("_+([^_]*)_+",line)
+
             if linkre2:
                 print(linkre2)
                 for keyword in linkre2:
