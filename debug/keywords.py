@@ -30,6 +30,7 @@ def Keywords():
     wordslist = {}.fromkeys([line.strip() for line in open("../data/words.txt")])
 
     wordslist[u'押金百分比'] = 100
+    wordslist[u'租金付费方式'] = u'月付'
     yi = 0
     xuzu = 0
     num = 1
@@ -53,22 +54,22 @@ def Keywords():
                     #print(ans)
                     if yi == 0 and key == u'姓名':
                         wordslist[u'甲方姓名'] = ans
-                    elif yi == 0 and key == u'电话号码':
+                    elif yi == 0 and key == u'电话号码' or yi == 0 and key == u'电话':
                         wordslist[u'甲方电话号码'] = ans
                     elif yi == 0 and key == u'身份证号码':
                         wordslist[u'甲方身份证号码'] = ans
-                    elif yi == 0 and key == u'住址':
-                        wordslist[u'甲方住址'] = ans
                         yi = 1
+                    elif yi == 0 and key == u'住址' or yi == 0 and key == u'地址':
+                        wordslist[u'甲方住址'] = ans
                     elif yi == 1 and key == u'姓名':
                         wordslist[u'乙方姓名'] = ans
-                    elif yi == 1 and key == u'电话号码':
+                    elif yi == 1 and key == u'电话号码' or yi == 1 and key == u'电话':
                         wordslist[u'乙方电话号码'] = ans
                     elif yi == 1 and key == u'身份证号码':
                         wordslist[u'乙方身份证号码'] = ans
-                    elif yi == 1 and key == u'住址':
+                    elif yi == 1 and key == u'住址' or yi == 1 and key == u'地址':
                         wordslist[u'乙方住址'] = ans
-                    elif key == u'名称':
+                    elif key == u'名称' or key == u'品名':
                         wordslist[u'租用物品名称'] = ans
                     elif key == u'件数':
                         wordslist[u'租用物品件数'] = ans
