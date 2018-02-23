@@ -57,6 +57,8 @@ def Keywords():
                         wordslist[u'甲方电话号码'] = ans
                     elif yi == 0 and key == u'身份证号码':
                         wordslist[u'甲方身份证号码'] = ans
+                    elif yi == 0 and key == u'住址':
+                        wordslist[u'甲方住址'] = ans
                         yi = 1
                     elif yi == 1 and key == u'姓名':
                         wordslist[u'乙方姓名'] = ans
@@ -64,6 +66,8 @@ def Keywords():
                         wordslist[u'乙方电话号码'] = ans
                     elif yi == 1 and key == u'身份证号码':
                         wordslist[u'乙方身份证号码'] = ans
+                    elif yi == 1 and key == u'住址':
+                        wordslist[u'乙方住址'] = ans
                     elif key == u'名称':
                         wordslist[u'租用物品名称'] = ans
                     elif key == u'件数':
@@ -112,11 +116,23 @@ def Keywords():
             continue
 
     print(wordslist)
-    for key, value in wordslist.items():
-        f3.write(str(key) + '：' + str(value) + '\n')
+
+    list_word = [u'甲方姓名', u'甲方电话号码', u'甲方身份证号码', u'甲方住址', u'乙方姓名',
+                 u'乙方电话号码', u'乙方身份证号码', u'乙方住址', u'租用物品名称', u'租用物品单价',
+                 u'租用物品件数', u'租用物品备注', u'租金付费方式', u'租金费用', u'押金数目',
+                 u'押金百分比', u'续租约定', u'续租百分比', u'交货日期', u'归还日期',
+                 u'合同开始日期', u'合同结束日期', u'担保单位', u'签订日期', ]
+
+    for line4 in list_word:
+        #print(line4)
+        for key, value in wordslist.items():
+           if key == line4:
+                f3.write(str(key) + '：' + str(value) + '\n')
+                break
 
     f1.close()
     f2.close()
     f3.close()
+
 if __name__ == '__main__':
     Keywords()
