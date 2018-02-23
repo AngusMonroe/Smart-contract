@@ -1,6 +1,6 @@
 #coding:utf-8
-__author__='XJX'
-__date__='2018.02.07'
+__author__='XJX, LW'
+__date__='2018.02.23'
 
 """
 description:
@@ -49,7 +49,7 @@ def Extract(aimpath):
                         flag = re.findall("_+([^_]*)_+",line)#匹配'_x_'字段
                         while flag:
                             print(flag)
-                            keyword_tran = re.sub('_+([^_]*)_+', '##' + str(num) + '##\n', line, count=1)#将匹配到的字段转化为'##num##'格式
+                            keyword_tran = re.sub('_+([^_]*)_+', '##' + str(num) + '##', line, count=1)#将匹配到的字段转化为'##num##'格式
                             f4.write('##' + str(num) + '## ' + flag[0] +'\n')
                             #print(keyword_tran)
                             #print(line)

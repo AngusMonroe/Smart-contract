@@ -1,3 +1,0 @@
-../data/datadir/newdir/租赁协议简要标画版.txt
-../data/datadir/newdir/租赁协议简要标画版（1）.txt
-../data/datadir/newdir/租赁协议简要标画版（2）.txt

@@ -1,5 +1,5 @@
-__author__='XJX'
-__date__='2018.02.08'
+__author__='XJX, LW'
+__date__='2018.02.23'
 # -*- coding: utf-8 -*-
 
 from doc2txt import *
@@ -8,7 +8,6 @@ from keywords import *
 import logging
 
 if __name__=='__main__':
-    mypath = r'../data/datadir'
-    aimpath = Translate(mypath)
-    Extract(aimpath)
+    mypath = r'../data/datadir/newdir/租赁合同.txt'
+    Extract(mypath)
     Keywords()
