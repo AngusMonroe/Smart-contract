@@ -29,6 +29,7 @@ def Keywords():
     wordlist = {}.fromkeys([ line.strip() for line in open("../data/words1.txt") ])
     wordslist = {}.fromkeys([line.strip() for line in open("../data/words.txt")])
 
+    wordslist[u'押金百分比'] = 100
     yi = 0
     xuzu = 0
     num = 1
