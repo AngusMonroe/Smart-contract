@@ -7,7 +7,11 @@ from regular_expression import *
 from keywords import *
 import logging
 
-if __name__=='__main__':
-    mypath = r'../data/datadir/newdir/租赁合同.txt'
-    Extract(mypath)
+def nlp():
+    mypath = r'../data/datadir'
+    aimpath = Translate(mypath)
+    Extract(aimpath)
     Keywords()
+
+if __name__=='__main__':
+    nlp()
