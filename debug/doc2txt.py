@@ -76,7 +76,7 @@ def Translate(path):
         print('error')
 
     o.close()
-    o = open(fileNameSet, "r")
+    o = open(fileNameSet, "r",encoding='utf8')
     aimpath = o.readline()[:-1]
     print('aim is: ' + aimpath)
     o.close()
