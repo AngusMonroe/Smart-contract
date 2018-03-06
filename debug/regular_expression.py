@@ -19,7 +19,7 @@ def Extract(aimpath):
     data_text = r"../data/data.txt"#储存替换后的合同文本
     map_text = r"../data/map.txt"  # 储存关键词映射
 
-    f1 = open(in_text,'r+',encoding='utf8')
+    f1 = open(in_text,'r+')
     f2 = open(out_text,'w',encoding='utf8')
     f3 = open(data_text, 'w', encoding='utf8')
     f4 = open(map_text, 'w', encoding='utf8')
