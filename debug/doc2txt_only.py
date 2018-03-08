@@ -1,15 +1,11 @@
 __author__='XJX'
-__date__='2018.02.08'
+__date__='2018.03.08'
 # -*- coding: utf-8 -*-
 
 """
 description:
-    将一个目录下所有doc和docx文件转成txt
-    该目录下创建一个新目录newdir
-    新目录下fileNames.txt创建一个文本存入所有的word文件名
-    本版本具有一定的容错性，即允许对同一文件夹多次操作而不发生冲突
+    将path路径指定docx文件转成txt
 """
-
 import docx2txt
 import os
 import re
@@ -61,6 +57,6 @@ if __name__ == '__main__':
     # print('Enter your Director\'s path:')
     # print("路径用\或\\表示均可")
     # mypath = input()
-    mypath = '/Users/xujiaxing/Documents/GitHub/Smart-contract/data/datadir/租赁合同.docx'
+    mypath = '../data/datadir/租赁合同.docx'
 
     Translate(mypath)

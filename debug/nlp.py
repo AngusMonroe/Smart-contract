@@ -1,5 +1,5 @@
-__author__='XJX, LW'
-__date__='2018.02.23'
+__author__='XJX'
+__date__='2018.02.08'
 # -*- coding: utf-8 -*-
 
 from doc2txt_only import *
