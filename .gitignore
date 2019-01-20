@@ -125,4 +125,6 @@ ENV/
 #MacOS
 */.DS_Store
 .DS_Store
-
+.idea
+*.bak
+ltp_data_v3.4.0

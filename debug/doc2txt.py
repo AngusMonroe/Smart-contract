@@ -46,10 +46,10 @@ def Translate(path):
                 print(filename)
             #如果不是word文件：继续
             if not fnmatch.fnmatch(filename, '*.doc') and not fnmatch.fnmatch(filename, '*.docx'):
-                continue;
+                continue
             #如果是word临时文件：继续
             if fnmatch.fnmatch(filename, '~$*'):
-                continue;
+                continue
             if debug:
                 print(filename)
             docpath = os.path.abspath(os.path.join(path,filename))
